@@ -11,7 +11,11 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 status](https://www.r-pkg.org/badges/version/animeR)](https://CRAN.R-project.org/package=animeR)
 <!-- badges: end -->
 
+## Purpose
+
 The goal of animeR is to …
+
+## Target Audience
 
 ## Installation
 
