@@ -25,6 +25,10 @@ You can install the development version of animeR like so:
 # FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
 ```
 
+## Group Members
+
+-   Charavee Basnet Chettri
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
