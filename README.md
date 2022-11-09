@@ -16,7 +16,7 @@ status](https://www.r-pkg.org/badges/version/animeR)](https://CRAN.R-project.org
 The goal of animeR is to help anime directors and anime lovers to
 understand the current trend in the anime industry. The package builds
 on the dataset Anime.csv which includes information about over 20,000
-different animes regarding their name, time aired, producers, genres,
+different animes like their name, time aired, producers, genres,
 synopsis, score, popularity, etc. Our goal for this package is to
 provide tools for anime lovers and directors to easily filter for their
 desired criteria, understand recurring themes, and predict the
@@ -24,9 +24,10 @@ popularity of a anime.
 
 ## Target Audience
 
-Our target audience would be people interested in anime trying to look
-for suggestions on what anime should they watch or directors who want to
-understand the trend of the anime industry.
+Our target audience would be people interested in anime or newly
+exploring anime who may be looking for anime information and/or
+recommendations, and creative professionals (like directors) who want to
+understand the trends in the anime industry.
 
 ## Project Proposal
 
@@ -44,10 +45,11 @@ understand the trend of the anime industry.
     on popularity, the visualization of anime popularity by genre, and
     number of anime by top producers using a bar chart.
 
-5)  predict_popularity( ): this function produces a multiple regression
-    model predicting the popularity rating of an anime as well as model
-    analysis to help anime directors and investors to predict the
-    popularity of a potential anime.
+5)  predict_popularity( ): this function fits a multiple regression
+    model predicting the popularity rating of an anime based on
+    categorical variables like the Source of the anime. Also, this
+    function conducts model analysis to help anime directors and
+    investors to predict the popularity of a potential anime.
 
 ## Installation
 
@@ -60,9 +62,9 @@ library(animeR)
 
 ## Group Members
 
-- Charavee Basnet Chettri
-- Michiru Nozawa
-- Lily Diao
+-   Charavee Basnet Chettri
+-   Michiru Nozawa
+-   Lily Diao
 
 ## Example
 
