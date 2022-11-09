@@ -61,6 +61,7 @@ You can install the development version of animeR like so:
 
 - Charavee Basnet Chettri
 - Michiru Nozawa
+- Lily Diao
 
 ## Example
 
