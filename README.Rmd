@@ -22,10 +22,23 @@ knitr::opts_chunk$set(
 
 ## Purpose 
 
-The goal of animeR is to ...
+The goal of animeR is to help anime directors and anime lovers to understand the current trend in the anime industry. The package builds on the dataset Anime.csv which includes information about over 20,000 different animes regarding their name, time aired, producers, genres, synopsis, score, popularity, etc. Our goal for this package is to provide tools for anime lovers and directors to easily filter for their desired criteria, understand recurring themes, and predict the popularity of a anime.
 
 ## Target Audience
 
+Our target audience would be people interested in anime trying to look for suggestions on what anime should they watch or directors who want to understand the trend of the anime industry.
+
+## Project Proposal
+
+1) find_anime(...): This function serve as an filtering tool for anime lovers to locate the list of anime of their interest. 
+
+2) anime_rec(x, y):  The function takes in genre x and year y and output a list of five anime with their synopsis based on popularity rating.
+
+3) get_trend(x, y): This function takes in genre x and year y and output a wordcloud that shows the most recurring themes and words in the anime’s synopsis. 
+
+4) info( ): This function returns the top five anime of all time based on popularity, the visualization of anime popularity by genre, and number of anime by top producers using a bar chart. 
+
+5) predict_popularity( ): this function produces a multiple regression model predicting the popularity rating of an anime as well as model analysis to help anime directors and investors to predict the popularity of a potential anime. 
 
 ## Installation
 
