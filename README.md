@@ -28,6 +28,7 @@ You can install the development version of animeR like so:
 ## Group Members
 
 -   Charavee Basnet Chettri
+-   Michiru Nozawa
 
 ## Example
 
