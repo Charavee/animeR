@@ -13,9 +13,11 @@ status](https://www.r-pkg.org/badges/version/animeR)](https://CRAN.R-project.org
 
 ## Purpose
 
-The goal of animeR is to …
+The goal of animeR is to help anime directors and anime lovers to understand the current trend in the anime industry. The package builds on the dataset Anime.csv which includes information about over 20,000 different animes regarding their name, time aired, producers, genres, synopsis, score, popularity, etc. Our goal for this package is to provide tools for anime lovers and directors to easily filter for their desired criteria, understand recurring themes, and predict the popularity of a anime. 
 
 ## Target Audience
+
+Our target audience would be people interested in anime trying to look for suggestions on what anime should they watch or directors who want to understand the trend of the anime industry.
 
 ## Installation
 
@@ -29,6 +31,7 @@ You can install the development version of animeR like so:
 
 -   Charavee Basnet Chettri
 -   Michiru Nozawa
+-   Lily Diao
 
 ## Example
 
