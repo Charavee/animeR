@@ -54,7 +54,8 @@ understand the trend of the anime industry.
 You can install the development version of animeR like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+devtools::install_github("Charavee/animeR")
+library(animeR)
 ```
 
 ## Group Members
