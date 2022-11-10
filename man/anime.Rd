@@ -9,15 +9,18 @@
 
 A data frame with 21460 rows and 28 columns:
 \describe{
-\item{id}{title}{synonyms}
-\item{synopsis}{japanese}
+\item{id}
+\item{title}
+\item{synonyms}
+\item{synopsis}
+\item{japanese}
 \item{english}{type}
 ...
 }
 }
 }
 \source{
-\url{https://www.who.int/teams/global-tuberculosis-programme/data}
+\url{https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database}
 }
 \usage{
 anime
