@@ -5,3 +5,4 @@ test_that("Number of rows", {
 test_that("Number of columns", {
   expect_equal (ncol(anime), 28)
 })
+
