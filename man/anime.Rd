@@ -5,18 +5,15 @@
 \alias{anime}
 \title{Anime data set}
 \format{
-\subsection{\code{anime}}{
+A data frame with 21460 rows and 28 columns
 
-A data frame with 21460 rows and 28 columns:
 \describe{
-\item{id}
-\item{title}
-\item{synonyms}
-\item{synopsis}
-\item{japanese}
+\item{id}{abcd}
+\item{title}{abcd}
+\item{synonyms}{abcd}
+\item{synopsis}{abcd}
+\item{japanese}{abcd}
 \item{english}{type}
-...
-}
 }
 }
 \source{
@@ -26,6 +23,6 @@ A data frame with 21460 rows and 28 columns:
 anime
 }
 \description{
-A list of anime
+Anime data set
 }
 \keyword{datasets}
