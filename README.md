@@ -57,7 +57,7 @@ understand the trends in the anime industry.
 You can install the development version of animeR like so:
 
 ``` r
-devtools::install_github("Charavee/animeR")
+devtools::install_github("cbasnetchettri/animeR")
 library(animeR)
 ```
 
