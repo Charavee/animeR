@@ -13,7 +13,7 @@ search_anime(title_short)
 A dataframe of title and synopsis of the all the possible anime that user might indicate.
 }
 \description{
-This function can be used as a search engine for anime. It helps you find a specific anime and give its overview, as well as give a list of anime that might be interesting for user and their information.
+This function can be used as a search engine for an anime. It helps you find a specific anime and give its overview, as well as give a list of anime that might be interesting for user and their information.
 }
 \examples{
 
