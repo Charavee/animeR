@@ -31,8 +31,9 @@ understand the trends in the anime industry.
 
 ## Project Proposal
 
-1)  find_anime(…): This function serve as an filtering tool for anime
-    lovers to locate the list of anime of their interest.
+1)  search_anime(…): This function serves as a tool to obtain an
+    overview of filtering tool for anime lovers to locate the list of
+    anime of their interest.
 
 2)  anime_rec(x, y): The function takes in genre x and year y and output
     a list of five anime with their synopsis based on popularity rating.
