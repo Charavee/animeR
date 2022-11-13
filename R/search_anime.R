@@ -22,8 +22,8 @@ search_anime <- function(title_short) {
     title_syn <- tryCatch(
       expr = {
         user_animedf <- anime %>%
-          dplyr::filter(str_detect(anime$Title, title_short)) %>%
-          dplyr::select(Title, Synopsis)
+          dplyr::filter(str_detect(anime$title, title_short)) %>%
+          dplyr::select(title, synopsis)
       },
       error = function(cond) {
         message(paste("Title does not seem to exist:", title_short))
