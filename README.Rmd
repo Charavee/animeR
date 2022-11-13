@@ -45,7 +45,7 @@ Our target audience would be people interested in anime or newly exploring anime
 You can install the development version of animeR like so:
 
 ``` r
-devtools::install_github("Charavee/animeR")
+devtools::install_github("cbasnetchettri/animeR")
 library(animeR)
 ```
 
