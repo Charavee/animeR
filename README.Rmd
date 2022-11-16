@@ -22,11 +22,11 @@ knitr::opts_chunk$set(
 
 ## Purpose 
 
-The goal of animeR is to help anime directors and anime lovers to understand the current trend in the anime industry. The package builds on the dataset Anime.csv which includes information about over 20,000 different animes like their name, time aired, producers, genres, synopsis, score, popularity, etc. Our goal for this package is to provide tools for anime lovers and directors to easily filter for their desired criteria, understand recurring themes, and predict the popularity of a anime.
+The goal of animeR is to help anime directors and anime lovers to understand the current trend in the anime industry. The package builds on the dataset Anime.csv which includes information about over 20,000 different animes, such as their name, time aired, producers, genres, synopsis, score, popularity, and more. Our goal for this package is to provide tools for anime lovers and directors to easily filter for their desired criteria, understand recurring themes, and predict the popularity of a anime.
 
 ## Target Audience
 
-Our target audience would be people interested in anime or newly exploring anime who may be looking for anime information and/or recommendations, and creative professionals (like directors) who want to understand the trends in the anime industry.
+Our target audience would be people interested in anime or newly exploring anime who may be looking for detailed anime information and/or recommendations, and creative professionals, such as directors and people who works in anime or media industry, who want to understand the trends in their industry.
 
 ## Project Proposal
 
