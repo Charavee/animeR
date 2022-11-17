@@ -55,10 +55,10 @@ library(animeR)
 This is a basic example for `search_anime()`:
 
 ```{r example}
-# library(animeR)
+library(animeR)
 
 # Search all the anime that has "Naruto" in their title. Please make sure to have a character as an input.
-# search_anime("Naruto")
+search_anime("Naruto")
 ```
 
 

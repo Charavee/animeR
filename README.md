@@ -65,39 +65,29 @@ library(animeR)
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example for `search_anime()`:
 
 ``` r
-#library(animeR)
-## basic example code
+library(animeR)
+
+# Search all the anime that has "Naruto" in their title. Please make sure to have a character as an input.
+search_anime("Naruto")
+#> Here is the list of anime.
+#> # A tibble: 27 × 2
+#>    title                                                               synopsis 
+#>    <chr>                                                               <chr>    
+#>  1 Naruto                                                              "Moments…
+#>  2 Naruto: Shippuuden                                                  "It has …
+#>  3 Boruto: Naruto Next Generations                                     "Followi…
+#>  4 The Last: Naruto the Movie                                          "Two yea…
+#>  5 Boruto: Naruto the Movie                                            "The spi…
+#>  6 Naruto: Shippuuden Movie 6 - Road to Ninja                          "Returni…
+#>  7 Naruto: Shippuuden Movie 1                                          "A group…
+#>  8 Naruto Movie 1: Dai Katsugeki!! Yuki Hime Shinobu Houjou Dattebayo! "Naruto …
+#>  9 Naruto: Shippuuden Movie 2 - Kizuna                                 "Unleash…
+#> 10 Naruto: Shippuuden Movie 4 - The Lost Tower                         "Led by …
+#> # … with 17 more rows
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
 
 ## Group Members
 
