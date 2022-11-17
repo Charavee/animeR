@@ -1,6 +1,6 @@
 #' Anime data set
 #'
-#' @format A data frame with 21460 rows and 28 columns
+#' @format A data frame with 21460 rows and 27 columns
 #'
 #' \describe{
 #' \item{id}{Unique number identifier for each anime in data set}
@@ -19,8 +19,8 @@
 #' \item{licensors}{Names of licensors of the anime}
 #' \item{studios}{Name of the studios where anime would be created}
 #' \item{source}{The source the anime is based on like manga, original, novel etc.}
-#' \item{genre}{The genres of the anime like comedy, horror etc. }
-#' \item{theme}{The topics the anime is based on like detective, vampire etc.}
+#' \item{genres}{The genres of the anime like comedy, horror etc. }
+#' \item{themes}{The topics the anime is based on like detective, vampire etc.}
 #' \item{demographics}{The audience who watches the anime}
 #' \item{duration_minutes}{The length of each episode of the anime in minutes}
 #' \item{rating}{The intended age group/audience for the anime}
@@ -30,6 +30,7 @@
 #' \item{popularity}{abcd}
 #' \item{members}{abcd}
 #' \item{favorites}{abcd}
+#' \item{english}{Name of the anime in English}
 #' }
 #' @source <https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database>
 "anime"

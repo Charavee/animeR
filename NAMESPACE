@@ -3,3 +3,4 @@
 export(search_anime)
 import(dplyr)
 importFrom(magrittr,"%>%")
+importFrom(stringr,"str_detect")

@@ -4,10 +4,10 @@
 \alias{search_anime}
 \title{animeR}
 \usage{
-search_anime(title_short)
+search_anime(user_title)
 }
 \arguments{
-\item{title_short}{: A character vector of name of the anime title. It can be either full title or a word that is a part of the title.}
+\item{user_title}{: A character vector of name of the anime title. It can be either full title or a word that is a part of the title.}
 }
 \value{
 A dataframe of title and synopsis of the all the possible anime that user might indicate.
