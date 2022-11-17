@@ -49,12 +49,6 @@ devtools::install_github("cbasnetchettri/animeR")
 library(animeR)
 ```
 
-## Group Members 
-
-- Charavee Basnet Chettri 
-- Michiru Nozawa
-- Lily Diao
-
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
@@ -79,3 +73,9 @@ plot(pressure)
 ```
 
 In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+
+## Group Members 
+
+- Charavee Basnet Chettri 
+- Michiru Nozawa
+- Lily Diao

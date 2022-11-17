@@ -16,8 +16,8 @@ status](https://www.r-pkg.org/badges/version/animeR)](https://CRAN.R-project.org
 The goal of animeR is to help anime directors and anime lovers to
 understand the current trend in the anime industry. The package builds
 on the dataset Anime.csv which includes information about over 20,000
-different animes like their name, time aired, producers, genres,
-synopsis, score, popularity, etc. Our goal for this package is to
+different animes, such as their name, time aired, producers, genres,
+synopsis, score, popularity, and more. Our goal for this package is to
 provide tools for anime lovers and directors to easily filter for their
 desired criteria, understand recurring themes, and predict the
 popularity of a anime.
@@ -25,28 +25,30 @@ popularity of a anime.
 ## Target Audience
 
 Our target audience would be people interested in anime or newly
-exploring anime who may be looking for anime information and/or
-recommendations, and creative professionals (like directors) who want to
-understand the trends in the anime industry.
+exploring anime who may be looking for detailed anime information and/or
+recommendations, and creative professionals, such as directors and
+people who works in anime or media industry, who want to understand the
+trends in their industry.
 
 ## Project Proposal
 
-1)  search_anime(…): This function serves as a tool to obtain an
+1)  `search_anime(...)`: This function serves as a tool to obtain an
     overview of filtering tool for anime lovers to locate the list of
     anime of their interest.
 
-2)  anime_rec(x, y): The function takes in genre x and year y and output
-    a list of five anime with their synopsis based on popularity rating.
+2)  `anime_rec(x, y)`: The function takes in genre x and year y and
+    output a list of five anime with their synopsis based on popularity
+    rating.
 
-3)  get_trend(x, y): This function takes in genre x and year y and
+3)  `get_trend(x, y)`: This function takes in genre x and year y and
     output a wordcloud that shows the most recurring themes and words in
     the anime’s synopsis.
 
-4)  info( ): This function returns the top five anime of all time based
-    on popularity, the visualization of anime popularity by genre, and
-    number of anime by top producers using a bar chart.
+4)  `info( )`: This function returns the top five anime of all time
+    based on popularity, the visualization of anime popularity by genre,
+    and number of anime by top producers using a bar chart.
 
-5)  predict_popularity( ): this function fits a multiple regression
+5)  `predict_popularity( )`: this function fits a multiple regression
     model predicting the popularity rating of an anime based on
     categorical variables like the Source of the anime. Also, this
     function conducts model analysis to help anime directors and
@@ -60,12 +62,6 @@ You can install the development version of animeR like so:
 devtools::install_github("cbasnetchettri/animeR")
 library(animeR)
 ```
-
-## Group Members
-
--   Charavee Basnet Chettri
--   Michiru Nozawa
--   Lily Diao
 
 ## Example
 
@@ -102,3 +98,9 @@ You can also embed plots, for example:
 
 In that case, don’t forget to commit and push the resulting figure
 files, so they display on GitHub and CRAN.
+
+## Group Members
+
+-   Charavee Basnet Chettri
+-   Michiru Nozawa
+-   Lily Diao
