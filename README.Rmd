@@ -28,6 +28,15 @@ The goal of animeR is to help anime directors and anime lovers to understand the
 
 Our target audience would be people interested in anime or newly exploring anime who may be looking for detailed anime information and/or recommendations, and creative professionals, such as directors and people who works in anime or media industry, who want to understand the trends in their industry.
 
+## Installation
+
+You can install the development version of animeR like so:
+
+``` r
+devtools::install_github("cbasnetchettri/animeR")
+library(animeR)
+```
+
 ## Project Proposal
 
 1) `search_anime(...)`: This function serves as a tool to obtain an overview of  filtering tool for anime lovers to locate the list of anime of their interest. 
@@ -40,14 +49,6 @@ Our target audience would be people interested in anime or newly exploring anime
 
 5) `predict_popularity( )`: this function fits a multiple regression model predicting the popularity rating of an anime based on categorical variables like the Source of the anime. Also, this function conducts model analysis to help anime directors and investors to predict the popularity of a potential anime. 
 
-## Installation
-
-You can install the development version of animeR like so:
-
-``` r
-devtools::install_github("cbasnetchettri/animeR")
-library(animeR)
-```
 
 ## Example
 

@@ -30,6 +30,15 @@ recommendations, and creative professionals, such as directors and
 people who works in anime or media industry, who want to understand the
 trends in their industry.
 
+## Installation
+
+You can install the development version of animeR like so:
+
+``` r
+devtools::install_github("cbasnetchettri/animeR")
+library(animeR)
+```
+
 ## Project Proposal
 
 1)  `search_anime(...)`: This function serves as a tool to obtain an
@@ -53,15 +62,6 @@ trends in their industry.
     categorical variables like the Source of the anime. Also, this
     function conducts model analysis to help anime directors and
     investors to predict the popularity of a potential anime.
-
-## Installation
-
-You can install the development version of animeR like so:
-
-``` r
-devtools::install_github("cbasnetchettri/animeR")
-library(animeR)
-```
 
 ## Example
 
