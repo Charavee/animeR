@@ -13,7 +13,10 @@ globalVariables("synopsis")
 #' # Obtain a word cloud that shows the most frequent words appeared in all anime's synopsis.
 #' view_theme()
 #'
-#' @import dplyr, wordcloud, tidytext
+#' @import dplyr
+#' @import wordcloud
+#' @import tidytext
+#' @importFrom magrittr "%>%"
 #' @export
 
 view_theme<-function(){
