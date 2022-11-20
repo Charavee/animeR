@@ -38,6 +38,7 @@ library(animeR)
 ```
 
 ## Project Proposal
+We will be creating the followng functions for this project. Two functions are mainly targeting anime lovers, one helping them to search information about specific anime and another one helping them to get anime recommendation according to their preference. The rest of the functions help anime producers to understand the the general info of the anime industry, under stand the current trend reflected by the synopsis, and use a model to predict the popularity of a specific anime. 
 
 1) `search_anime(...)`: This function serves as a tool to obtain an overview of  filtering tool for anime lovers to locate the list of anime of their interest. 
 
@@ -59,6 +60,7 @@ library(animeR)
 
 # Search all the anime that has "Naruto" in their title. Please make sure to have a character as an input.
 search_anime("Naruto")
+
 ```
 
 
