@@ -79,7 +79,7 @@ and use a model to predict the popularity of a specific anime.
     overview of filtering tool for anime lovers to locate the list of
     anime of their interest.
 
-2)  `anime_rec(x, y)`: The function takes in genre x and year y and
+2)  `anime_rec(x, y)`: The function takes in genre x and source y and
     output a list of five anime with their synopsis based on popularity
     rating.
 
@@ -99,6 +99,6 @@ and use a model to predict the popularity of a specific anime.
 
 ## Group Members
 
-- Charavee Basnet Chettri
-- Michiru Nozawa
-- Lily Diao
+-   Charavee Basnet Chettri
+-   Michiru Nozawa
+-   Lily Diao
