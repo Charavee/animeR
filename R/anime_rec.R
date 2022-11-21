@@ -17,15 +17,16 @@
 #'
 #' @import dplyr
 #' @importFrom magrittr "%>%"
-#' @importFrom stringr "str_detect"
+#' @importFrom tidyr "unnest"
+#' @importFrom utils "head"
 #' @export
 
 
 anime_rec <- function(user_genre, user_source) {
   # split genres and create new rows
   anime_genres <- anime %>%
-    mutate(genres = strsplit(as.character(genres), ", |, ")) %>%
-    unnest(genres)
+    dplyr::mutate(genres = strsplit(as.character(genres), ", |, ")) %>%
+    tidyr::unnest(genres)
 
   # Show top 5 most popular anime based on the given genre and source
   if (user_genre %in% anime_genres$genres & user_source %in% anime_genres$source) {
@@ -34,7 +35,7 @@ anime_rec <- function(user_genre, user_source) {
 
     user_anime_rec[order(user_anime_rec$popularity),] %>%
       dplyr::select(-c("genres", "source")) %>%
-      head(n = 5)
+      utils::head(n = 5)
 
   } else if (user_genre %in% anime_genres$genres & !(user_source %in% anime_genres$source)) {
     # Print error message
