@@ -36,8 +36,13 @@ anime_rec <- function(user_genre, user_source) {
       dplyr::select(-c("genres", "source")) %>%
       head(n = 5)
 
-  }else{
+  } else if (user_genre %in% anime_genres$genres & !(user_source %in% anime_genres$source)) {
     # Print error message
-    message("ERROR: At least one of your input is not in the dataset. Please check the list of genres and source and try again.")
+    message("ERROR: Your source, ", user_source, ", cannot be found in the dataset. Please pick one source that is in the dataset and try again.")
+  } else if (!(user_genre %in% anime_genres$genres) & user_source %in% anime_genres$source) {
+    # Print error message
+    message("ERROR: Your genre, " , user_genre, ", cannot be found in the dataset. Please pick one genre that is in the dataset and try again.")
+  } else {
+    message("ERROR: Both of your inputs cannot be found in the dataset. Please select one genre and source that is in the dataset and try again.")
   }
 }
