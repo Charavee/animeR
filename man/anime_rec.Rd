@@ -9,7 +9,7 @@ anime_rec(user_genre, user_source)
 \arguments{
 \item{user_genre}{: A character vector of genre of the anime. Users can pick one genre out of the list of 22 genres we provide.}
 
-\item{user_source:}{A character vector of source of the anime. Users can also pick one source out of the list of 17 sources.}
+\item{user_source}{: A character vector of source of the anime. Users can also pick one source out of the list of 17 sources.}
 }
 \value{
 A tibble of top five most popular anime with their titles, synopsis, and popularity.

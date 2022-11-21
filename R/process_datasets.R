@@ -30,7 +30,6 @@
 #' \item{popularity}{abcd}
 #' \item{members}{abcd}
 #' \item{favorites}{abcd}
-#' \item{english}{Name of the anime in English}
 #' }
 #' @source <https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database>
 "anime"

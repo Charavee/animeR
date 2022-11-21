@@ -1,10 +1,11 @@
+globalVariables(c("genres"))
 #' Find Top 5 Popular Anime
 #'
 #' @description This function helps you to find the top 5 most popular anime in its certain genre and source. There are 22 unique genres and 17 unique sources to choose from.
 #'
 #' @param user_genre : A character vector of genre of the anime. Users can pick one genre out of the list of 22 genres we provide.
 #'
-#' @param user_source: A character vector of source of the anime. Users can also pick one source out of the list of 17 sources.
+#' @param user_source : A character vector of source of the anime. Users can also pick one source out of the list of 17 sources.
 #'
 #' @return A tibble of top five most popular anime with their titles, synopsis, and popularity.
 #'
