@@ -20,8 +20,6 @@ globalVariables("synopsis")
 #' @export
 
 view_theme<-function(){
-  # initializing the common stop words data from tidytext
-  tidytext::data(stop_words)
   # split up the synopsis into individual words and exclude stop words
   text_only<-anime %>%
     select(synopsis) %>%
