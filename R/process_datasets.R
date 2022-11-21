@@ -34,3 +34,10 @@
 #' }
 #' @source <https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database>
 "anime"
+
+#' stop_words data set
+#'
+#' @format A data frame with 21460 rows and 27 columns
+#'
+#' \describe{
+#' \item{word}{Common stopwords used in writing}
