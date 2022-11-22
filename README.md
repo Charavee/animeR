@@ -79,13 +79,12 @@ and use a model to predict the popularity of a specific anime.
     overview of filtering tool for anime lovers to locate the list of
     anime of their interest.
 
-2)  `anime_rec(x, y)`: The function takes in genre x and source y and
-    output a list of five anime with their synopsis based on popularity
-    rating.
+2)  `anime_rec(x, y)`: The function outputs a list of five anime with
+    their synopsis based on popularity rating.
 
-3)  `get_trend(x, y)`: This function takes in genre x and year y and
-    output a wordcloud that shows the most recurring themes and words in
-    the anime’s synopsis.
+3)  `get_trend()`: This function takes in genre x and year y and output
+    a wordcloud that shows the most recurring themes and words in the
+    anime’s synopsis.
 
 4)  `info( )`: This function returns the top five anime of all time
     based on popularity, the visualization of anime popularity by genre,
@@ -99,6 +98,6 @@ and use a model to predict the popularity of a specific anime.
 
 ## Group Members
 
--   Charavee Basnet Chettri
--   Michiru Nozawa
--   Lily Diao
+- Charavee Basnet Chettri
+- Michiru Nozawa
+- Lily Diao
