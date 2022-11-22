@@ -41,3 +41,7 @@
 #'
 #' \describe{
 #' \item{word}{Common stopwords used in writing}
+#' \item{lexicon}{common stopwords}
+#' }
+#' @source <https://rdrr.io/cran/tidytext/man/stop_words.html>
+"stop_words"
