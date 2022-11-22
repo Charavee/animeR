@@ -1,6 +1,6 @@
 globalVariables(c("synopsis", "word"))
 
-#' animeR
+#' Generate a Word Cloud
 #'
 #' @description This function is used to generate a word cloud that shows the most popular words of in all the anime's synopsis.
 #'
