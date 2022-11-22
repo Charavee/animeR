@@ -5,7 +5,7 @@
 \alias{anime}
 \title{Anime data set}
 \format{
-A data frame with 21460 rows and 27 columns
+A data frame with 21460 rows and 28 columns
 
 \describe{
 \item{id}{Unique number identifier for each anime in data set}

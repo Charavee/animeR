@@ -2,7 +2,6 @@
 library(tidyverse)
 library(janitor)
 anime<-read_csv("data-raw/anime.csv") %>%
-  clean_names() %>%
-  select (-english)
+  clean_names()
 
 usethis::use_data(anime, overwrite = TRUE)
