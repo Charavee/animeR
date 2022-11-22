@@ -1,4 +1,4 @@
-globalVariables(c("synopsis", "word"))
+globalVariables(c("synopsis", "word", "stop_words"))
 
 #' Generate a Word Cloud
 #'

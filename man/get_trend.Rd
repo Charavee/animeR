@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_trend.R
 \name{get_trend}
 \alias{get_trend}
-\title{animeR}
+\title{Generate a Word Cloud}
 \usage{
 get_trend()
 }
