@@ -35,6 +35,7 @@ A data frame with 21460 rows and 27 columns
 \item{popularity}{abcd}
 \item{members}{abcd}
 \item{favorites}{abcd}
+\item{english}{Name of the anime in English}
 }
 }
 \source{
