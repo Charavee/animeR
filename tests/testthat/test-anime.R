@@ -3,7 +3,7 @@ test_that("Number of rows", {
 })
 
 test_that("Number of columns", {
-  expect_equal (ncol(anime), 28)
+  expect_equal (ncol(anime), 27)
 })
 
 test_that("Search Anime Function only takes character vector", {
