@@ -50,7 +50,7 @@ search_anime <- function(user_title) {
         return(NA)
       }
     )
-    return(title_syn)
+    return(print(title_syn, n = nrow(title_syn)))
   } else{
     # stop if user's input is not character
     stop("user_title should be a character", call. = FALSE)
