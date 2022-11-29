@@ -2,7 +2,7 @@
 % Please edit documentation in R/search_anime.R
 \name{search_anime}
 \alias{search_anime}
-\title{animeR}
+\title{Search Anime}
 \usage{
 search_anime(user_title)
 }
