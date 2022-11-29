@@ -4,12 +4,14 @@
 \alias{anime_rec}
 \title{Find Top 5 Popular Anime}
 \usage{
-anime_rec(user_genre, user_source)
+anime_rec(user_genre, user_source, user_num)
 }
 \arguments{
 \item{user_genre}{: A character vector of genre of the anime. Users can pick one genre out of the list of 22 genres we provide.}
 
 \item{user_source}{: A character vector of source of the anime. Users can also pick one source out of the list of 17 sources.}
+
+\item{user_num}{: A numeric vector of the number of anime that user want as an output.}
 }
 \value{
 A tibble of top five most popular anime with their titles, synopsis, and popularity.
@@ -21,7 +23,7 @@ This function helps you to find the top 5 most popular anime in its certain genr
 
 library(animeR)
 
-# Top five most popular action anime that are based on manga
-anime_rec("Action", "Manga")
+# Top 15 most popular action anime that are based on manga
+anime_rec("Action", "Manga", 15)
 
 }

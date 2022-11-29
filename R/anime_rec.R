@@ -7,14 +7,16 @@ globalVariables(c("genres"))
 #'
 #' @param user_source : A character vector of source of the anime. Users can also pick one source out of the list of 17 sources.
 #'
+#' @param user_num : A numeric vector of the number of anime that user want as an output.
+#'
 #' @return A tibble of top five most popular anime with their titles, synopsis, and popularity.
 #'
 #' @examples
 #'
 #' library(animeR)
 #'
-#' # Top five most popular action anime that are based on manga
-#' anime_rec("Action", "Manga")
+#' # Top 15 most popular action anime that are based on manga
+#' anime_rec("Action", "Manga", 15)
 #'
 #' @import dplyr
 #' @importFrom magrittr "%>%"
@@ -29,7 +31,7 @@ anime_rec <- function(user_genre, user_source, user_num) {
     dplyr::mutate(genres = strsplit(as.character(genres), ", |, ")) %>%
     tidyr::unnest(genres)
 
-  # Show top 5 most popular anime based on the given genre and source
+  # Show top user specified number most popular anime based on the given genre and source
   if (user_genre %in% anime_genres$genres & user_source %in% anime_genres$source) {
     user_anime_rec <- subset(anime_genres, select = c("title", "synopsis", "popularity", "genres", "source")) %>%
       dplyr::filter(genres == user_genre & source == user_source)

@@ -13,6 +13,6 @@ test_that("Search Anime Function only takes character vector", {
 })
 
 # Test for anime_rec()
-test_that("anime_rec function outputs five animes", {
-  expect_equal(nrow(anime_rec("Action", "Manga")), 5)
+test_that("anime_rec function outputs five animes when user specified num_user = 5", {
+  expect_equal(nrow(anime_rec("Action", "Manga", 5)), 5)
 })
