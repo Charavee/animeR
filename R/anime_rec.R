@@ -23,7 +23,7 @@ globalVariables(c("genres"))
 #' @export
 
 
-anime_rec <- function(user_genre, user_source) {
+anime_rec <- function(user_genre, user_source, user_num) {
   # split genres and create new rows
   anime_genres <- anime %>%
     dplyr::mutate(genres = strsplit(as.character(genres), ", |, ")) %>%
@@ -36,7 +36,7 @@ anime_rec <- function(user_genre, user_source) {
 
     user_anime_rec[order(user_anime_rec$popularity),] %>%
       dplyr::select(-c("genres", "source")) %>%
-      utils::head(n = 5)
+      utils::head(n = user_num)
 
   } else if (user_genre %in% anime_genres$genres & !(user_source %in% anime_genres$source)) {
     # Print error message
