@@ -39,30 +39,6 @@ devtools::install_github("cbasnetchettri/animeR")
 library(animeR)
 ```
 
-## Project Proposal
-
-1)  `search_anime(...)`: This function serves as a tool to obtain an
-    overview of filtering tool for anime lovers to locate the list of
-    anime of their interest.
-
-2)  `anime_rec(x, y)`: The function takes in genre x and year y and
-    output a list of five anime with their synopsis based on popularity
-    rating.
-
-3)  `get_trend(x, y)`: This function takes in genre x and year y and
-    output a wordcloud that shows the most recurring themes and words in
-    the anime’s synopsis.
-
-4)  `info( )`: This function returns the top five anime of all time
-    based on popularity, the visualization of anime popularity by genre,
-    and number of anime by top producers using a bar chart.
-
-5)  `predict_popularity( )`: this function fits a multiple regression
-    model predicting the popularity rating of an anime based on
-    categorical variables like the Source of the anime. Also, this
-    function conducts model analysis to help anime directors and
-    investors to predict the popularity of a potential anime.
-
 ## Example
 
 This is a basic example for `search_anime()`:
@@ -89,8 +65,39 @@ search_anime("Naruto")
 #> # … with 17 more rows
 ```
 
+## Project Proposal
+
+We will be creating the followng functions for this project. Two
+functions are mainly targeting anime lovers, one helping them to search
+information about specific anime and another one helping them to get
+anime recommendation according to their preference. The rest of the
+functions help anime producers to understand the the general info of the
+anime industry, under stand the current trend reflected by the synopsis,
+and use a model to predict the popularity of a specific anime.
+
+1)  `search_anime(...)`: This function serves as a tool to obtain an
+    overview of filtering tool for anime lovers to locate the list of
+    anime of their interest.
+
+2)  `anime_rec(x, y)`: The function outputs a list of five anime with
+    their synopsis based on popularity rating.
+
+3)  `get_trend()`: This function takes in genre x and year y and output
+    a wordcloud that shows the most recurring themes and words in the
+    anime’s synopsis.
+
+4)  `info( )`: This function returns the top five anime of all time
+    based on popularity, the visualization of anime popularity by genre,
+    and number of anime by top producers using a bar chart.
+
+5)  `predict_popularity( )`: this function fits a multiple regression
+    model predicting the popularity rating of an anime based on
+    categorical variables like the Source of the anime. Also, this
+    function conducts model analysis to help anime directors and
+    investors to predict the popularity of a potential anime.
+
 ## Group Members
 
--   Charavee Basnet Chettri
--   Michiru Nozawa
--   Lily Diao
+- Charavee Basnet Chettri
+- Michiru Nozawa
+- Lily Diao
