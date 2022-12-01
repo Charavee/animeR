@@ -1,0 +1,21 @@
+---
+title: "animeR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{animeR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(animeR)
+```
+
+this is our vignette 
