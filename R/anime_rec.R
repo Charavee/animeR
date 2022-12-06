@@ -26,6 +26,21 @@ globalVariables(c("genres"))
 
 
 anime_rec <- function(user_genre, user_source, user_num) {
+  if (is.character(user_genre) == FALSE) {
+    # user_genre has to be a character, print error message
+    message("ERROR: Please make sure that your genre is character.")
+  }
+
+  if (is.character(user_source) == FALSE){
+    # user_source has to be a character, print an error message
+    message("ERROR: Please make sure that your source is character.")
+  }
+
+  if (is.numeric(user_num) == FALSE){
+    # user_num has to be a numeric, print an error message
+    message("ERROR: Please make sure that your number is numeric.")
+  }
+
   # split genres and create new rows
   anime_genres <- anime %>%
     dplyr::mutate(genres = strsplit(as.character(genres), ", |, ")) %>%
