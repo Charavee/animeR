@@ -9,3 +9,4 @@ stop_words<-read_csv("data-raw/stop_words.csv") %>%
 
 usethis::use_data(anime, overwrite = TRUE)
 usethis::use_data(stop_words, overwrite = TRUE)
+
