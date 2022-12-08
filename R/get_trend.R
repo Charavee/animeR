@@ -25,7 +25,8 @@ get_trend<-function(){
   text_only<-anime %>%
     select(synopsis) %>%
     tidytext::unnest_tokens(word, synopsis) %>%
-    anti_join(stop_words)
+    anti_join(stop_words) %>%
+    filter(word!="source" & word!="unknown" & word!="rewrite" & word!="written" & word!="mal" & word!="form" & word!="series" & word!="episode")
   #calculate the frequency of each word
   text_only_count <-text_only %>%
     group_by(word) %>%
