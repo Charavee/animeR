@@ -26,27 +26,49 @@ globalVariables(c("genres"))
 
 
 anime_rec <- function(user_genre, user_source, user_num) {
-  # split genres and create new rows
-  anime_genres <- anime %>%
-    dplyr::mutate(genres = strsplit(as.character(genres), ", |, ")) %>%
-    tidyr::unnest(genres)
+  # All the possible errors about user inputs
+  if (is.character(user_genre) == FALSE & is.character(user_source) == TRUE & is.numeric(user_num) == TRUE) {
+    # user_genre has to be a character, print error message
+    message("ERROR: Please make sure that your genre is a character vector.")
+  } else if (is.character(user_genre) == TRUE & is.character(user_source) == FALSE & is.numeric(user_num) == TRUE){
+    # user_source has to be a character, print an error message
+    message("ERROR: Please make sure that your source is a character vector.")
+  } else if (is.character(user_genre) == TRUE & is.character(user_source) == TRUE & is.numeric(user_num) == FALSE){
+    # user_num has to be a numeric, print an error message
+    message("ERROR: Please make sure that your inputted number is a numeric.")
+  } else if (is.character(user_genre) == FALSE & is.character(user_source) == FALSE & is.numeric(user_num) == TRUE){
+    # user_genre and user_source have to be character vectors, print an error message
+    message("ERROR: Please make sure that your genre and source are character vectors.")
+  } else if(is.character(user_genre) == FALSE & is.character(user_source) == TRUE & is.numeric(user_num) == FALSE){
+    # user_genre has to be a character vector and user_num has to be a numeric, print an error message
+    message("ERROR: Please make sure that your genre is a character and the inputed number is a numeric.")
+  } else if(is.character(user_genre) == FALSE & is.character(user_source) == FALSE & is.numeric(user_num) == FALSE){
+    # all of the inputs are not correct
+    message("ERROR: Please make sure that your genre and soure are the character vectors and the inputed number is a numeric.")
+  } else{
+    # When all the user inputs are in a correct format
+    # split genres and create new rows
+    anime_genres <- anime %>%
+      dplyr::mutate(genres = strsplit(as.character(genres), ", |, ")) %>%
+      tidyr::unnest(genres)
 
-  # Show top user specified number most popular anime based on the given genre and source
-  if (user_genre %in% anime_genres$genres & user_source %in% anime_genres$source) {
-    user_anime_rec <- subset(anime_genres, select = c("title", "synopsis", "popularity", "genres", "source")) %>%
-      dplyr::filter(genres == user_genre & source == user_source)
+    # Show top user specified number most popular anime based on the given genre and source
+    if (user_genre %in% anime_genres$genres & user_source %in% anime_genres$source) {
+      user_anime_rec <- subset(anime_genres, select = c("title", "synopsis", "popularity", "genres", "source")) %>%
+        dplyr::filter(genres == user_genre & source == user_source)
 
-    user_anime_rec[order(user_anime_rec$popularity),] %>%
-      dplyr::select(-c("genres", "source")) %>%
-      utils::head(n = user_num)
+      user_anime_rec[order(user_anime_rec$popularity),] %>%
+        dplyr::select(-c("genres", "source")) %>%
+        utils::head(n = user_num)
 
-  } else if (user_genre %in% anime_genres$genres & !(user_source %in% anime_genres$source)) {
-    # Print error message
-    message("ERROR: Your source, ", user_source, ", cannot be found in the dataset. Please pick one source that is in the dataset and try again.")
-  } else if (!(user_genre %in% anime_genres$genres) & user_source %in% anime_genres$source) {
-    # Print error message
-    message("ERROR: Your genre, " , user_genre, ", cannot be found in the dataset. Please pick one genre that is in the dataset and try again.")
-  } else {
-    message("ERROR: Both of your inputs cannot be found in the dataset. Please select one genre and source that is in the dataset and try again.")
+    } else if (user_genre %in% anime_genres$genres & !(user_source %in% anime_genres$source)) {
+      # Print error message
+      message("ERROR: Your source, ", user_source, ", cannot be found in the dataset. Please pick one source that is in the dataset and try again.")
+    } else if (!(user_genre %in% anime_genres$genres) & user_source %in% anime_genres$source) {
+      # Print error message
+      message("ERROR: Your genre, " , user_genre, ", cannot be found in the dataset. Please pick one genre that is in the dataset and try again.")
+    } else {
+      message("ERROR: Both of your inputs cannot be found in the dataset. Please select one genre and source that is in the dataset and try again.")
+    }
   }
 }
