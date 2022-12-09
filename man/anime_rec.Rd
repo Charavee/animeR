@@ -2,7 +2,7 @@
 % Please edit documentation in R/anime_rec.R
 \name{anime_rec}
 \alias{anime_rec}
-\title{Find Top 5 Popular Anime}
+\title{Find \emph{n} most Popular Anime Based on Given Genre and Source}
 \usage{
 anime_rec(user_genre, user_source, user_num)
 }
@@ -14,10 +14,10 @@ anime_rec(user_genre, user_source, user_num)
 \item{user_num}{: A numeric vector of the number of anime that user want as an output.}
 }
 \value{
-A tibble of top five most popular anime with their titles, synopsis, and popularity.
+A tibble of top \emph{n} most popular anime of given genre and source with their titles, synopsis, and popularity.
 }
 \description{
-This function helps you to find the top 5 most popular anime in its certain genre and source. There are 22 unique genres and 17 unique sources to choose from.
+This function helps you to find the top \emph{n} most popular anime in its certain genre and source. There are 22 unique genres and 17 unique sources to choose from.
 }
 \examples{
 
