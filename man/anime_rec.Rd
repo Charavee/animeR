@@ -14,14 +14,20 @@ anime_rec(user_genre, user_source, user_num)
 \item{user_num}{: A numeric vector of the number of anime that user want as an output.}
 }
 \value{
-A tibble of top \emph{n} most popular anime of given genre and source with their titles, synopsis, and popularity.
+A table of top \emph{n} most popular anime of given genre and source with their titles, synopsis, and popularity.
 }
 \description{
-This function helps you to find the top \emph{n} most popular anime in its certain genre and source. There are 22 unique genres and 17 unique sources to choose from.
+This function helps you to find the top \emph{n} most popular anime in its certain genre and source. There are 22 unique genres and 17 unique sources to choose from. Please use \code{genre_list()} and \code{source_list()} to see the list of unique genres and sources that you can choose from.
 }
 \examples{
 
 library(animeR)
+
+# Check the list of genres
+genre_list()
+
+# Check the list of sources
+source_list()
 
 # Top 15 most popular action anime that are based on manga
 anime_rec("Action", "Manga", 15)

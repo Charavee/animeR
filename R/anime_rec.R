@@ -1,7 +1,7 @@
 globalVariables(c("genres"))
 #' Find *n* most Popular Anime Based on Given Genre and Source
 #'
-#' @description This function helps you to find the top *n* most popular anime in its certain genre and source. There are 22 unique genres and 17 unique sources to choose from.
+#' @description This function helps you to find the top *n* most popular anime in its certain genre and source. There are 22 unique genres and 17 unique sources to choose from. Please use `genre_list()` and `source_list()` to see the list of unique genres and sources that you can choose from.
 #'
 #' @param user_genre : A character vector of genre of the anime. Users can pick one genre out of the list of 22 genres we provide.
 #'
@@ -9,11 +9,17 @@ globalVariables(c("genres"))
 #'
 #' @param user_num : A numeric vector of the number of anime that user want as an output.
 #'
-#' @return A tibble of top *n* most popular anime of given genre and source with their titles, synopsis, and popularity.
+#' @return A table of top *n* most popular anime of given genre and source with their titles, synopsis, and popularity.
 #'
 #' @examples
 #'
 #' library(animeR)
+#'
+#' # Check the list of genres
+#' genre_list()
+#'
+#' # Check the list of sources
+#' source_list()
 #'
 #' # Top 15 most popular action anime that are based on manga
 #' anime_rec("Action", "Manga", 15)
@@ -22,6 +28,7 @@ globalVariables(c("genres"))
 #' @importFrom magrittr "%>%"
 #' @importFrom tidyr "unnest"
 #' @importFrom utils "head"
+#' @importFrom flextable "flextable"
 #' @export
 
 
@@ -57,9 +64,13 @@ anime_rec <- function(user_genre, user_source, user_num) {
       user_anime_rec <- subset(anime_genres, select = c("title", "synopsis", "popularity", "genres", "source")) %>%
         dplyr::filter(genres == user_genre & source == user_source)
 
-      user_anime_rec[order(user_anime_rec$popularity),] %>%
+      user_anime_rec <- user_anime_rec[order(user_anime_rec$popularity),] %>%
         dplyr::select(-c("genres", "source")) %>%
         utils::head(n = user_num)
+
+      #user_anime_rec
+
+      flextable::flextable(user_anime_rec, cwidth = c(0.5,7,0.5))
 
     } else if (user_genre %in% anime_genres$genres & !(user_source %in% anime_genres$source)) {
       # Print error message

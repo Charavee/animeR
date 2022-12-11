@@ -14,5 +14,7 @@
 #' @export
 
 source_list <- function(){
+  message("Here is the list of sources.")
+  message("There are 17 unique sources in total.")
   unique(anime$source)
 }
