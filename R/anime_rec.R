@@ -68,7 +68,7 @@ anime_rec <- function(user_genre, user_source, user_num) {
         dplyr::select(-c("genres", "source")) %>%
         utils::head(n = user_num)
 
-      #user_anime_rec
+      # return a table in a Viewer
 
       flextable::flextable(user_anime_rec, cwidth = c(0.5,7,0.5))
 

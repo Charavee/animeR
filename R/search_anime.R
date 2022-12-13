@@ -6,7 +6,7 @@ globalVariables(c("title", "anime", "synopsis"))
 #'
 #' @param user_title : A character vector of name of the anime title. It can be either full title or a word that is a part of the title.
 #'
-#' @return A dataframe of title and synopsis of the all the possible anime that user might indicate.
+#' @return A table of title and synopsis of the all the possible anime that user might indicate. The table will be shown in the viewer.
 #'
 #' @examples
 #'
@@ -32,9 +32,8 @@ search_anime <- function(user_title) {
           if(nrow(user_animedf) == 0) {
             message("ERROR: Title, ", user_title, ", does not seem to exist in the dataset.")
           } else{
-            # return a list of anime
-            message("Here is the list of anime.")
-            user_animedf
+            # return a list of anime in Viewer
+            flextable::flextable(user_animedf, cwidth = c(0.5,7,0.5))
           }
       },
 
