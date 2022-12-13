@@ -1,11 +1,11 @@
 globalVariables(c("genres"))
 #' Find *n* most Popular Anime Based on Given Genre and Source
 #'
-#' @description This function helps you to find the top *n* most popular anime in its certain genre and source. There are 22 unique genres and 17 unique sources to choose from. Please use `genre_list()` and `source_list()` to see the list of unique genres and sources that you can choose from.
+#' @description This function helps you to find the top *n* most popular anime in its certain genre and source. There are 21 unique genres and 16 unique sources to choose from. Please use `unique_list(user_variable)` to see the list of unique genres and sources that you can choose from.
 #'
-#' @param user_genre : A character vector of genre of the anime. Users can pick one genre out of the list of 22 genres we provide.
+#' @param user_genre : A character vector of genre of the anime. Users can pick one genre out of the list of 21 genres we provide.
 #'
-#' @param user_source : A character vector of source of the anime. Users can also pick one source out of the list of 17 sources.
+#' @param user_source : A character vector of source of the anime. Users can also pick one source out of the list of 16 sources.
 #'
 #' @param user_num : A numeric vector of the number of anime that user want as an output.
 #'
@@ -16,10 +16,10 @@ globalVariables(c("genres"))
 #' library(animeR)
 #'
 #' # Check the list of genres
-#' genre_list()
+#' unique_list("genres")
 #'
 #' # Check the list of sources
-#' source_list()
+#' unique_list("sources")
 #'
 #' # Top 15 most popular action anime that are based on manga
 #' anime_rec("Action", "Manga", 15)

@@ -7,7 +7,7 @@
 unique_list(user_variable)
 }
 \arguments{
-\item{user_variable:}{A character vector of a variable's name in the anime dataset. This could be selected from the following list: genres, sources, themes, licensors, producers, and studios.}
+\item{user_variable}{: A character vector of a variable's name in the anime dataset. This could be selected from the following list: genres, sources, themes, licensors, producers, and studios.}
 }
 \value{
 A list of unique genres, sources, themes, licensors, producers, or studios.
