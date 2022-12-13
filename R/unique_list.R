@@ -2,6 +2,8 @@
 #'
 #' @description This function helps you to find all genres and sources that you can use as an input for other function, such as `anime_rec()`. In addition to genres and sources, users can check the list of unique themes, licensors, producers, and studios as well.
 #'
+#' @param user_variable: A character vector of a variable's name in the anime dataset. This could be selected from the following list: genres, sources, themes, licensors, producers, and studios.
+#'
 #' @return A list of unique genres, sources, themes, licensors, producers, or studios.
 #'
 #' @examples
@@ -21,7 +23,7 @@
 
 unique_list <- function(user_variable){
   if (is.character(user_variable) == FALSE){
-    errorCondition(message = "Please input a character vector, not a numeric vector.")
+    stop("Please input a character vector, not a numeric vector.", call. = FALSE)
   }else{
     if (tolower(user_variable) == "genres" || tolower(user_variable) == "genre"){
       anime_genres <- anime %>%
@@ -87,7 +89,7 @@ unique_list <- function(user_variable){
       message("There are 965 unique studio.")
       unique(anime$studios)
     }else{
-      errorCondition(message = "Please check the variable name that you inputed. It must be one of the following: genres, sources, themes, demographics, licensors, producers, studios.")
+      stop("Please check the variable name that you inputed. It must be one of the following: genres, sources, themes, demographics, licensors, producers, studios.", call. = FALSE)
     }
   }
 }

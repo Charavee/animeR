@@ -24,3 +24,10 @@ test_that("anime_rec function outputs tests", {
   expect_message(anime_rec(1, 2, 3), "ERROR: Please make sure that your genre and source are character vectors.")
   expect_message(anime_rec("Action", "Manga", "10"), "ERROR: Please make sure that your inputted number is a numeric.")
 })
+
+# Test for unique_list()
+test_that("unique_list function outputs tests", {
+  expect_error(unique_list(1), "Please input a character vector, not a numeric vector.")
+  expect_error(unique_list("id"), "Please check the variable name that you inputed. It must be one of the following: genres, sources, themes, demographics, licensors, producers, studios.")
+  expect_equal(length(unique_list("sources")), 16)
+})
