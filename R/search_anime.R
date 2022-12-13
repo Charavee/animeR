@@ -18,6 +18,7 @@ globalVariables(c("title", "anime", "synopsis"))
 #' @import dplyr
 #' @importFrom magrittr "%>%"
 #' @importFrom stringr "str_detect"
+#' @importFrom flextable "flextable"
 #' @export
 
 search_anime <- function(user_title) {

@@ -10,7 +10,7 @@ search_anime(user_title)
 \item{user_title}{: A character vector of name of the anime title. It can be either full title or a word that is a part of the title.}
 }
 \value{
-A dataframe of title and synopsis of the all the possible anime that user might indicate.
+A table of title and synopsis of the all the possible anime that user might indicate. The table will be shown in the viewer.
 }
 \description{
 This function can be used as a search engine for an anime. It helps you find a specific anime and give its overview, as well as give a list of anime that might be interesting for user and their information.
