@@ -20,7 +20,7 @@ This function helps you to find all genres and sources that you can use as an in
 library(animeR)
 
 # Show the list of genres
-genre_list()
+unique_list("genres")
 
 # Show the list of themes
 unique_list("themes")
