@@ -2,11 +2,13 @@ globalVariables(c("anime", "popularity", "genres", "title", "ranked", "rating", 
 
 #' animeR
 #'
-#' @description This function produces a bar graph showing the .
+#' @description This function produces a side-by-side boxplot between source and score of anime based on the the time range a user inputs.
 #'
-#' @param user_num : A numeric vector of the number of anime that user wants as an output.
+#' @param start_time : A numeric vector of start time in military time format ( time in four digit).
 #'
-#' @return A tibble of the specified number of anime and its synopsis, and other information?
+#' @param end_time : A numeric vector of end time in military time format ( time in four digit).
+#'
+#' @return A side-by-side boxplot
 #'
 #' @examples
 #'
@@ -39,39 +41,13 @@ graph_one <- function(start_time, end_time) {
     theme_bw() +
     theme(
       axis.text.x = element_text(angle = 90)
-    )
+    )+
+    labs (title = "Side-by-Side Boxplot of Score and Source",
+          subtitle = "Based on user-input time range",
+          x = "Source of the Anime ",
+          y = "Score")
 
 }
 
-
-
-
-anime %>%
-  filter(
-    day %in% str_split(broadcast, pattern = " ")[[1]]
-  ) %>%
-  mutate(
-    time = str_split(broadcast, pattern = " ")[[1]][3]
-  ) %>%
-  filter(
-    !is.na(time)
-  ) %>%
-  ggplot() +
-  geom_col(aes(x = time, y = score))
-
-
-anime_graph <- anime %>%
-  filter (genres != "Unknown") %>%
-  filter (themes != "Unknown") %>%
-  mutate(
-    genres_grouped = ifelse(sum(!is.na(match(c("Action", "Comedy", "Fantasy"), str_split(genres, pattern = ",")[[1]]))) == 3,
-                            "All Top 3 Genres Present", NA),
-    genres_grouped = ifelse(sum(!is.na(match(c("Action", "Comedy", "Fantasy"), str_split(genres, pattern = ",")[[1]]))) == 2,
-                            "Two of Top 3 Genres Present", genres_grouped),
-    genres_grouped = ifelse(sum(!is.na(match(c("Action", "Comedy", "Fantasy"), str_split(genres, pattern = ",")[[1]]))) == 1,
-                            "One of Top 3 Genres Present", genres_grouped),
-    genres_grouped = ifelse(sum(!is.na(match(c("Action", "Comedy", "Fantasy"), str_split(genres, pattern = ",")[[1]]))) == 0,
-                            "None of Top 3 Genres Present", genres_grouped)
-  )
 
 
