@@ -25,30 +25,40 @@ globalVariables(c("anime", "id", "rating", "score", "source", "user_rating", "ra
 
 score_source_byrating <- function (user_rating) {
 
-  anime %>%
+  anime_rating <- anime %>%
     dplyr::filter(rating != "None") %>%
     group_by(id) %>%
     mutate(
       rating_code = str_split(rating, pattern = " ")[[1]][1]
     ) %>%
-    ungroup() %>%
-    dplyr::filter(
-      source != "Unknown",
-      rating_code == user_rating,
-      !is.na(score)
-    ) %>%
-    ggplot() +
-    geom_boxplot(aes(x = source, y = score)) +
-    theme_bw() +
-    theme(
-      axis.text.x = element_text(angle = 90)
-    )+
-    labs (title = "Side-by-Side Boxplot of Score and Source",
-          subtitle = "Based on user-input rating",
-          x = "Source of the Anime ",
-          y = "Score")
-}
+    ungroup()
 
+    if (!is.character (user_rating)){
+      stop (paste0 ("input should be a character"), call. = FALSE)}
+    else if ( is.numeric (user_rating)){
+      stop (paste0 ("input cannot be a numeric; should be a character"), call. = FALSE)}
+    else if(!(user_rating %in% anime_rating$rating_code)) {
+      stop(paste0(`user_rating`, " not found in data"), call. = FALSE)}
+    else {
+      anime_rating %>%
+        dplyr::filter(
+        source != "Unknown",
+        rating_code == user_rating,
+        !is.na(score)
+      ) %>%
+      ggplot() +
+      geom_boxplot(aes(x = source, y = score)) +
+      theme_bw() +
+      theme(
+        axis.text.x = element_text(angle = 90)
+      )+
+      labs (title = "Side-by-Side Boxplot of Score and Source",
+            subtitle = "Based on user-input rating",
+            x = "Source of the Anime ",
+            y = "Score")
+   }
+
+}
 
 
 
