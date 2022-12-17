@@ -37,4 +37,39 @@ get_trend<-function(){
   wordcloud::wordcloud(words = text_only_count$word, freq = text_only_count$count, min.freq = 1,
                        max.words=200, random.order=FALSE, rot.per=0.35,
                        colors=RColorBrewer::brewer.pal(8, "Dark2"))
+
+  #visualizing duration of minute
+  ggplot(data = anime, mapping = aes(x= duration_minutes))+
+    geom_histogram(binwidth=1, color="darkblue", fill="lightblue")+
+    xlim(c(0, 125))+
+    labs(x="Duration of the Anime (minutes)", y="Number of Animes")+
+    ggtitle("The Distribution of Anime Duration")
+
+  #distribution of anime score across producers
+  anime_top5_producers<-anime %>%
+    filter(producers == "NHK" | producers == "Aniplex"| producers == "TV Tokyo" | producers == "Lantis" | producers == "Bandai Visual")
+  ggplot(data = anime_top5_producers, mapping = aes(x = score))+
+    geom_boxplot()+
+    facet_wrap(~ producers, ncol = 1)+
+    labs(x="Anime Score")+
+    ggtitle("The Distribution of Anime Score of the Top Five Anime Producers")
+
+  #average anime score across genre
+  anime_genres_all<-anime %>%
+    mutate(genres = strsplit(as.character(genres), ", |, ")) %>%
+    unnest(genres) %>%
+    group_by(genres) %>%
+    filter(!is.na(score)) %>%
+    summarize(mean_score = mean(score)) %>%
+    arrange(desc(mean_score))
+  ggplot(data = anime_genres_all, aes(x = reorder(genres, + mean_score), y = mean_score))+
+    geom_bar(stat="identity", color="darkblue", fill="lightblue")+
+    ylim(0, 7.2)+
+    labs(x="Genre", y="Average Anime Score")+
+    ggtitle("Average Anime Score Across Genre") +
+    theme_bw() +
+    theme(
+      axis.text.x = element_text(angle = 90),
+      axis.ticks.x = element_blank()
+    )
 }
