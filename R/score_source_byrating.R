@@ -38,7 +38,7 @@ score_source_byrating <- function (user_rating) {
     else if ( is.numeric (user_rating)){
       stop (paste0 ("input cannot be a numeric; should be a character"), call. = FALSE)}
     else if(!(user_rating %in% anime_rating$rating_code)) {
-      stop(paste0(`user_rating`, " not found in data"), call. = FALSE)}
+      stop(paste0("Rating, ", `user_rating`, " ,not found in data"), call. = FALSE)}
     else {
       anime_rating %>%
         dplyr::filter(
