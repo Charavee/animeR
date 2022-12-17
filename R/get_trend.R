@@ -17,7 +17,7 @@ globalVariables(c("synopsis", "word", "stop_words", "duration_minutes", "mean_sc
 #' @import wordcloud
 #' @import tidytext
 #' @import RColorBrewer
-#' @import gridExtra
+#' @importFrom gridExtra "grid.arrange"
 #' @importFrom magrittr "%>%"
 #' @export
 
