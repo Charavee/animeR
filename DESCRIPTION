@@ -20,4 +20,4 @@ RoxygenNote: 7.2.1
 Depends: 
     R (>= 2.10)
 LazyData: true
-Imports: dplyr, magrittr, stringr
+Imports: dplyr, magrittr, stringr, tidyr
