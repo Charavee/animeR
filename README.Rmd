@@ -62,11 +62,11 @@ We will be creating the followng functions for this project. Two functions are m
 
 4) `get_trend()`: This function takes in genre x and year y and output a wordcloud that shows the most recurring themes and words in the anime’s synopsis. 
 
-5) `info( )`: This function returns the top five anime of all time based on popularity, the visualization of anime popularity by genre, and number of anime by top producers using a bar chart. 
+5) `rank_popular(n)`: This function returns a list of the *n* anime of all time based on popularity, providing information of the anime's genres, ranked, rating and source. 
 
 6) `predict_popularity( )`: this function fits a multiple regression model predicting the popularity rating of an anime based on categorical variables like the Source of the anime. Also, this function conducts model analysis to help anime directors and investors to predict the popularity of a potential anime. 
 
-7) `rank_popular()`: 
+7) `score_source_byrating(rating)`: This function returns a side-by-side boxplot comparing the scores (out of 10) of different sources given the rating specified by the user. 
 
 ## Group Members 
 
