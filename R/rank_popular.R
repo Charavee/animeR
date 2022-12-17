@@ -1,3 +1,4 @@
+
 globalVariables(c("anime", "popularity", "genres", "title", "ranked", "rating", "anime", "title", "synopsis", "source"))
 
 #' animeR
