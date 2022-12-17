@@ -1,4 +1,4 @@
-globalVariables(c("anime", "popularity", "genres", "title", "ranked", "rating", "anime", "title", "synopsis"))
+globalVariables(c("anime", "id", "rating", "score", "source", "user_rating", "rating_code", "str_split"))
 
 #' animeR
 #'
@@ -12,12 +12,14 @@ globalVariables(c("anime", "popularity", "genres", "title", "ranked", "rating", 
 #'
 #' library(animeR)
 #'
-#' # Obtain a boxplot of score statistics for each Source for animes with rating G.
+#' # Obtain a side-by-side boxplot of Score by Source for animes with rating G.
 #' score_source_byrating("G")
 #'
 #'
 #' @import dplyr
 #' @importFrom magrittr "%>%"
+#' @import ggplot2
+#' @import stringr
 #'
 #' @export
 
@@ -25,11 +27,11 @@ score_source_byrating <- function (user_rating) {
 
   anime %>%
     dplyr::filter(rating != "None") %>%
-    dplyr::group_by(id) %>%
-    dplyr::mutate(
+    group_by(id) %>%
+    mutate(
       rating_code = str_split(rating, pattern = " ")[[1]][1]
     ) %>%
-    dplyr::ungroup() %>%
+    ungroup() %>%
     dplyr::filter(
       source != "Unknown",
       rating_code == user_rating,

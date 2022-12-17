@@ -4,19 +4,22 @@
 \alias{rank_popular}
 \title{animeR}
 \usage{
-rank_popular()
+rank_popular(user_num)
+}
+\arguments{
+\item{user_num}{: A numeric vector of the number of anime that user wants as an output.}
 }
 \value{
-A dataframe of title and synopsis of the all the possible anime that user might indicate.
+A tibble of the specified number of anime and its synopsis, and other information?
 }
 \description{
-This function generates the top 20 anime ranked by popularity.
+This function generates a number (user-specified) of top anime ranked by popularity.
 }
 \examples{
 
 library(animeR)
 
 # Obtain Top 20 animes ranked by popularity
-rank_popular()
+rank_popular(20)
 
 }
