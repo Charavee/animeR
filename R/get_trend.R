@@ -1,4 +1,4 @@
-globalVariables(c("synopsis", "word", "stop_words"))
+globalVariables(c("synopsis", "word", "stop_words", "duration_minutes", "mean_score", "reorder", "plot1", "plot2", "plot3"))
 
 #' Generate a Word Cloud
 #'
@@ -77,5 +77,5 @@ get_trend<-function(){
     )+
     theme(plot.title=element_text(size=8))
 
-  grid.arrange(plot0, plot1, plot2, ncol=3)
+  grid.arrange(plot1, plot2, plot3, ncol=3)
 }
