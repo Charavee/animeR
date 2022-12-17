@@ -1,4 +1,3 @@
-
 # Test for input
 
 test_that ("input is a numeric",{
@@ -13,6 +12,3 @@ test_that ("input is a positive and greater than 0 numeric",{
 test_that ("input does not exceed maximum number of rows",{
   expect_error(rank_popular(1000000), "input cannot be greater than 21490")
 })
-
-
-
