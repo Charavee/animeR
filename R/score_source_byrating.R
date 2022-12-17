@@ -35,11 +35,11 @@ score_source_byrating <- function (user_rating) {
 
 
     if (!is.character (user_rating)){
-      stop (paste0 ("input should be a character"), call. = FALSE)}
+      stop ("input should be a character", call. = FALSE)}
     else if ( is.numeric (user_rating)){
-      stop (paste0 ("input cannot be a numeric; should be a character"), call. = FALSE)}
+      stop ("input cannot be a numeric; should be a character", call. = FALSE)}
     else if(!(user_rating %in% anime_rating$rating_code)) {
-      stop(paste0("not found in data (enter among: G, PG, PG-13, R, R+, Rx)"), call. = FALSE)}
+      stop("not found in data (enter among: G, PG, PG-13, R, R+, Rx)", call. = FALSE)}
     else {
       anime_rating %>%
         dplyr::filter(
