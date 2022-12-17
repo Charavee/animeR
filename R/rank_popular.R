@@ -34,8 +34,6 @@ rank_popular <- function (user_num) {
   else if (user_num > 21490){
     stop (paste0 ("input cannot be greater than 21490"))}
 
-
-
   else {
     anime_topn <- anime[order(anime$popularity),] %>%
       dplyr::select (popularity, title, genres, source, ranked, rating) %>%
@@ -43,7 +41,6 @@ rank_popular <- function (user_num) {
 
     print (anime_topn)
   }
-
 
 }
 
