@@ -8,4 +8,5 @@ anime<-read_csv("data-raw/anime.csv") %>%
   #clean_names()
 
 usethis::use_data(anime, overwrite = TRUE)
+
 usethis::use_data(stop_words, overwrite = TRUE)
