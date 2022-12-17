@@ -17,6 +17,7 @@ globalVariables(c("synopsis", "word", "stop_words"))
 #' @import wordcloud
 #' @import tidytext
 #' @import RColorBrewer
+#' @import gridExtra
 #' @importFrom magrittr "%>%"
 #' @export
 
@@ -39,20 +40,22 @@ get_trend<-function(){
                        colors=RColorBrewer::brewer.pal(8, "Dark2"))
 
   #visualizing duration of minute
-  ggplot(data = anime, mapping = aes(x= duration_minutes))+
+  plot1<-ggplot(data = anime, mapping = aes(x= duration_minutes))+
     geom_histogram(binwidth=1, color="darkblue", fill="lightblue")+
     xlim(c(0, 125))+
     labs(x="Duration of the Anime (minutes)", y="Number of Animes")+
-    ggtitle("The Distribution of Anime Duration")
+    ggtitle("The Distribution of Anime Duration")+
+    theme(plot.title=element_text(size=8))
 
   #distribution of anime score across producers
   anime_top5_producers<-anime %>%
     filter(producers == "NHK" | producers == "Aniplex"| producers == "TV Tokyo" | producers == "Lantis" | producers == "Bandai Visual")
-  ggplot(data = anime_top5_producers, mapping = aes(x = score))+
+  plot2<-ggplot(data = anime_top5_producers, mapping = aes(x = score))+
     geom_boxplot()+
     facet_wrap(~ producers, ncol = 1)+
     labs(x="Anime Score")+
-    ggtitle("The Distribution of Anime Score of the Top Five Anime Producers")
+    ggtitle("The Distribution of Anime Score of the Top Five Anime Producers")+
+    theme(plot.title=element_text(size=8))
 
   #average anime score across genre
   anime_genres_all<-anime %>%
@@ -62,7 +65,7 @@ get_trend<-function(){
     filter(!is.na(score)) %>%
     summarize(mean_score = mean(score)) %>%
     arrange(desc(mean_score))
-  ggplot(data = anime_genres_all, aes(x = reorder(genres, + mean_score), y = mean_score))+
+  plot3<-ggplot(data = anime_genres_all, aes(x = reorder(genres, + mean_score), y = mean_score))+
     geom_bar(stat="identity", color="darkblue", fill="lightblue")+
     ylim(0, 7.2)+
     labs(x="Genre", y="Average Anime Score")+
@@ -71,5 +74,8 @@ get_trend<-function(){
     theme(
       axis.text.x = element_text(angle = 90),
       axis.ticks.x = element_blank()
-    )
+    )+
+    theme(plot.title=element_text(size=8))
+
+  grid.arrange(plot0, plot1, plot2, ncol=3)
 }
