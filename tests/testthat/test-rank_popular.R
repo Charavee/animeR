@@ -14,5 +14,9 @@ test_that ("input does not exceed maximum number of rows",{
   expect_error(rank_popular(1000000), "input cannot be greater than 21490")
 })
 
+test_that ("returns correct number of rows",{
+  expect_equal(nrow(rank_popular(10)), 10)
+})
+
 
 
