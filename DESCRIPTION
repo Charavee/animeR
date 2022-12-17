@@ -22,5 +22,6 @@ RoxygenNote: 7.2.1
 Depends: 
     R (>= 2.10)
 LazyData: true
-Imports: dplyr, magrittr, stringr, tidyr, utils, RColorBrewer, tidytext, wordcloud, flextable
+Imports: dplyr, magrittr, stringr, tidyr, utils, RColorBrewer, tidytext, wordcloud, flextable, ggplot2
 VignetteBuilder: knitr
+
