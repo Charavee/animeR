@@ -1,0 +1,71 @@
+---
+title: "animeR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{animeR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(animeR)
+```
+
+The `animeR` is a package that contains the detailed information of more than 20000 anime. 
+
+## Motivation
+
+The goal of `animeR` is to help anime directors and anime lovers to easily understand the current trend in the anime industry. The package builds on the dataset. 
+
+## Dataset
+
+The dataset `anime` is taken from [Kaggle](https://www.kaggle.com/datasets/harits/anime-database-2022). Based on Kaggle, the data was collected through web scraping sourced by [MyAnimeList.net](https://myanimelist.net/) and teh data of 21460 anime were obtained and contained in the dataset `anime`. 
+
+## Who should use this package?
+
+This package would be perfect for not only people who are already interested in anime but also those who are newly exploring anime and are looking for detailed anime information and/or recommendations. Moreover, creative professionals, such as directors and people who works in anime or media industry, can use this package to understand the trends in their industry. 
+
+## What does the data look like?
+
+Here is the first five rows of `anime` dataset. 
+
+```{r}
+head(anime)
+```
+
+## What can we do with this data?
+
+These are the some example questions that we can address: 
+
+1. What are the top 10 popular anime over the course of years? 
+
+2. What are top 5 most popular original Sci-Fi anime. 
+
+3. What is the overview of the anime that I was recommended?   
+
+### Example 1
+
+**What are the top 5 most popular original Sci-Fi anime?**
+
+We can use `anime_rec()` function to find the 5 most popular Sci-Fi anime that are based on original story. Here, we can obtain not only the name of those anime but also their synopsis and rating. The output is clear and easy to interpret since it is ordered based on the popularity. 
+
+```{r}
+anime_rec("Sci-Fi", "Original", 5)
+```
+
+### Example 2
+
+### Example 3
+
+### Example 4
+
+### Example 5
+
+### Example 6
