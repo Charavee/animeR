@@ -16,7 +16,7 @@ This function is used to generate visualizations to show the trend of anime dura
 
 library(animeR)
 
-# Obtain a word cloud that shows the most frequent words appeared in all anime's synopsis.
-get_trend()
+# Obtain visualizations about current trends in anime movies
+get_trend("Movie")
 
 }

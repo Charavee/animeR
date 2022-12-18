@@ -1,4 +1,4 @@
-globalVariables(c("synopsis", "word", "stop_words", "duration_minutes", "type", "mean_score", "reorder", "plot1", "plot2", "plot3"))
+globalVariables(c("synopsis", "word", "stop_words", "duration_minutes", "type", "mean_score", "reorder", "plot1", "plot2", "plot3", "input_type"))
 
 #' Generate three visualizations regarding duration, score across producers, and score across different genre
 #'

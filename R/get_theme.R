@@ -1,4 +1,4 @@
-globalVariables(c("synopsis", "word", "type", "stop_words"))
+globalVariables(c("synopsis", "word", "type", "stop_words", "input_type"))
 
 #' Generate a Word Cloud of the Most Common Themes in the Synopsis
 #'
@@ -26,7 +26,7 @@ get_theme<-function(input_type){
   if (!is.character (input_type)){
     stop (paste0 ("input should be a character"), call. = FALSE)}
   else if(!(input_type %in% anime$type)) {
-    stop(paste0("Anime type, ", `input_type`, " ,not found in data"), call. = FALSE)}
+    stop(paste0("Anime type, ", `input_type`, " , not found in data"), call. = FALSE)}
   else{
     #selecting for user input
     anime_theme<-anime %>%
