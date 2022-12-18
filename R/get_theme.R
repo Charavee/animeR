@@ -1,4 +1,4 @@
-globalVariables(c("synopsis", "word", "stop_words"))
+globalVariables(c("synopsis", "word", "type", "stop_words"))
 
 #' Generate a Word Cloud of the Most Common Themes in the Synopsis
 #'
@@ -28,8 +28,11 @@ get_theme<-function(input_type){
   else if(!(input_type %in% anime$type)) {
     stop(paste0("Anime type, ", `input_type`, " ,not found in data"), call. = FALSE)}
   else{
+    #selecting for user input
+    anime_theme<-anime %>%
+      filter(type==input_type)
     #split up the synopsis into individual words and exclude stop words
-    text_only<-anime %>%
+    text_only<-anime_theme %>%
       select(synopsis) %>%
       tidytext::unnest_tokens(word, synopsis) %>%
       anti_join(stop_words) %>%

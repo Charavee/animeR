@@ -2,15 +2,15 @@
 % Please edit documentation in R/get_trend.R
 \name{get_trend}
 \alias{get_trend}
-\title{Generate a Word Cloud}
+\title{Generate three visualizations regarding duration, score across producers, and score across different genre}
 \usage{
-get_trend()
+get_trend(input_type)
 }
 \value{
-A word cloud visualization that present the frequency of each the
+Three visualizations about anime duration, score across different genre and score across different producers.
 }
 \description{
-This function is used to generate a word cloud that shows the most popular words of in all the anime's synopsis.
+This function is used to generate visualizations to show the trend of anime duration and score distributions.
 }
 \examples{
 
