@@ -1,46 +1,36 @@
-globalVariables(c("synopsis", "word", "stop_words", "duration_minutes", "mean_score", "reorder", "plot1", "plot2", "plot3"))
+globalVariables(c("synopsis", "word", "stop_words", "duration_minutes", "type", "mean_score", "reorder", "plot1", "plot2", "plot3", "input_type"))
 
-#' Generate a Word Cloud
+#' Generate three visualizations regarding duration, score across producers, and score across different genre
 #'
-#' @description This function is used to generate a word cloud that shows the most popular words of in all the anime's synopsis.
-#'
-#' @return A word cloud visualization that present the frequency of each the
+#' @description This function is used to generate visualizations to show the trend of anime duration and score distributions.
+#' @param input_type : a character vector of the type of the anime. Users can pick one genre out of the list of 6 types we provide.
+#' @return Three visualizations about anime duration, score across different genre and score across different producers.
 #'
 #' @examples
 #'
 #' library(animeR)
 #'
-#' # Obtain a word cloud that shows the most frequent words appeared in all anime's synopsis.
-#' get_trend()
+#' # Obtain visualizations about current trends in anime movies
+#' get_trend("Movie")
 #'
 #' @import dplyr
-#' @import wordcloud
-#' @import tidytext
 #' @import RColorBrewer
 #' @importFrom gridExtra "grid.arrange"
 #' @importFrom magrittr "%>%"
 #' @export
 
-get_trend<-function(){
-  # split up the synopsis into individual words and exclude stop words
-  text_only<-anime %>%
-    select(synopsis) %>%
-    tidytext::unnest_tokens(word, synopsis) %>%
-    anti_join(stop_words) %>%
-    filter(word!="source" & word!="unknown" & word!="rewrite" & word!="written" & word!="mal" & word!="form" & word!="series" & word!="episode")
-  #calculate the frequency of each word
-  text_only_count <-text_only %>%
-    group_by(word) %>%
-    summarise(count=n()) %>%
-    arrange(desc(count))
-  #generate word cloud
-  set.seed(1234)
-  wordcloud::wordcloud(words = text_only_count$word, freq = text_only_count$count, min.freq = 1,
-                       max.words=200, random.order=FALSE, rot.per=0.35,
-                       colors=RColorBrewer::brewer.pal(8, "Dark2"))
+get_trend<-function(input_type){
+  # All the possible errors about user inputs
+  if (!is.character (input_type)){
+    stop (paste0 ("input should be a character"), call. = FALSE)}
+  else if(!(input_type %in% anime$type)) {
+    stop(paste0("Anime type, ", `input_type`, " , not found in data"), call. = FALSE)}
+  else{
+    anime_type<-anime %>%
+      filter(type==input_type)
 
   #visualizing duration of minute
-  plot1<-ggplot(data = anime, mapping = aes(x= duration_minutes))+
+  plot1<-ggplot(data = anime_type, mapping = aes(x= duration_minutes))+
     geom_histogram(binwidth=1, color="darkblue", fill="lightblue")+
     xlim(c(0, 125))+
     labs(x="Duration of the Anime (minutes)", y="Number of Animes")+
@@ -48,7 +38,7 @@ get_trend<-function(){
     theme(plot.title=element_text(size=8))
 
   #distribution of anime score across producers
-  anime_top5_producers<-anime %>%
+  anime_top5_producers<-anime_type %>%
     filter(producers == "NHK" | producers == "Aniplex"| producers == "TV Tokyo" | producers == "Lantis" | producers == "Bandai Visual")
   plot2<-ggplot(data = anime_top5_producers, mapping = aes(x = score))+
     geom_boxplot()+
@@ -58,7 +48,7 @@ get_trend<-function(){
     theme(plot.title=element_text(size=8))
 
   #average anime score across genre
-  anime_genres_all<-anime %>%
+  anime_genres_all<-anime_type %>%
     mutate(genres = strsplit(as.character(genres), ", |, ")) %>%
     unnest(genres) %>%
     group_by(genres) %>%
@@ -78,4 +68,5 @@ get_trend<-function(){
     theme(plot.title=element_text(size=8))
 
   grid.arrange(plot1, plot2, plot3, ncol=3)
+  }
 }

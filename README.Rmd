@@ -47,11 +47,11 @@ We will be creating the followng functions for this project. Two functions are m
 
 3) `unique_list(variable)`: This function helps you to find all genres and sources that you can use as an input for other function, such as `anime_rec()`. The list of unique themes, licensors, producers, and studios can be checked too.
 
-4) `get_trend()`: This function takes in genre x and year y and output a wordcloud that shows the most recurring themes and words in the anime’s synopsis. 
+4) `get_trend(input_type)`: This function is used to generate visualizations to show the trend of anime duration and score distributions across different producers and genre. 
 
 5) `rank_popular(n)`: This function returns a list of the *n* anime of all time based on popularity, providing information of the anime's genres, ranked, rating and source. 
 
-6) `predict_popularity( )`: this function fits a multiple regression model predicting the popularity rating of an anime based on categorical variables like the Source of the anime. Also, this function conducts model analysis to help anime directors and investors to predict the popularity of a potential anime. 
+6) `get_theme(input_type)`: This function is used to generate a word cloud that shows the most popular words of in all the anime's synopsis. Users can input the type of anime, such as "Movies" and "TV" to narrow down their search.
 
 7) `score_source_byrating(rating)`: This function returns a side-by-side boxplot comparing the scores (out of 10) of different sources given the rating specified by the user. 
 
