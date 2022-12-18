@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, message=FALSE}
 library(animeR)
 ```
 
@@ -44,28 +44,103 @@ head(anime)
 
 These are the some example questions that we can address: 
 
-1. What are the top 10 popular anime over the course of years? 
+1. Is there any anime that is related to One Piece?  
 
-2. What are top 5 most popular original Sci-Fi anime. 
+2. What are the top 5 most popular original Sci-Fi anime? 
 
-3. What is the overview of the anime that I was recommended?   
+3. What are the top 20 most popular anime of all time?
+
+4. How are animes scored based on the source they are made from and their rating?
+
+5. What are some current trends in the anime industry ?
+
+6. What are the most common themes in an anime synopsis?
+
+7. What are the score distributions across different anime sources?
+   
 
 ### Example 1
 
-**What are the top 5 most popular original Sci-Fi anime?**
+**Is there any anime that is related to One Piece?**
 
-We can use `anime_rec()` function to find the 5 most popular Sci-Fi anime that are based on original story. Here, we can obtain not only the name of those anime but also their synopsis and rating. The output is clear and easy to interpret since it is ordered based on the popularity. 
+Many anime have multiple series, spin offs, and movies, so sometimes it is hard to find the particular anime that you are looking for. In this kind of situation, you can use the `search_anime()` function. For instance, if you are looking for One Piece anime, you can input “One Piece” as your input.
 
 ```{r}
-anime_rec("Sci-Fi", "Original", 5)
+search_anime("One Piece")
 ```
 
 ### Example 2
 
+**What are the top 5 most popular original Sci-Fi anime?**
+
+We can use the `anime_rec()` function to find the 5 most popular Sci-Fi anime that are based on original stories. Here, we can obtain not only the name of those anime but also their synopsis and rating. The output is clear and easy to interpret since it is ordered based on the popularity. If you are interested in other genres or sources, `unique_list()` function will give you all the other possible genres and sources that you can use for the input. 
+
+```{r}
+# Check the list of genres
+unique_list("genres")
+```
+
+```{r}
+# Check the list of sources
+unique_list("sources")
+```
+
+```{r}
+# Find top 5 original sci-fi anime
+anime_rec("Sci-Fi", "Original", 5)
+```
+
+
 ### Example 3
+
+**What are the top 20 most popular anime of all time?**
+
+If we, as a curious user, are not sure about which anime to start watching, we can obtain the top 20 list of the most popular anime along with each anime’s quick information to be able to decide better. Quick information includes the genre, source, rank and rating. If we, as a new creator, want some direction and understanding of what kind of anime has been the most popular based on its genre and source, this function can prove helpful.
+
+```{r}
+# Find top 20 most popular anime
+rank_popular(20)
+```
 
 ### Example 4
 
+**How are animes scored based on the source they are made from and their rating?**
+
+We can use this function, which generates a side-by-side boxplot comparing the median scores and outliers of PG-13 rated anime for each type of source, to enhance our understanding of anime and especially inform creators about what source they can explore for their potential anime to also achieve better scores. 
+
+```{r}
+# Compare Score boxplot statistics of each Source given the rating
+score_source_byrating ("PG-13")
+```
+
 ### Example 5
 
+**What is the current trend in the anime industry ?**
+
+For directors who are interested in the current trend in the anime industry, they might be interested in learning about how long most anime are, what are the top producers and the score distribution of their animes, and what genre tends to get a higher score. These users can use the `get_trend(inpute_theme)` function to present the distribution of anime duration, anime score across different producers, and average anime score across all genres. 
+
+```{r, warning=FALSE, message=FALSE}
+get_trend("Movie")
+```
+
 ### Example 6
+
+**What are the most common themes in anime synopsis?**
+
+For directors and screenwriters who are interested in learning about the most common themes in the synopsis, we provide a word cloud visualization that makes it easier for users to see what are the most prevalent ideas in an anime's plot. They can use the `get_trend(input_theme)` to see all common themes in a visualization.
+
+```{r, warning=FALSE, message=FALSE}
+get_theme("Movie")
+```
+
+### Example 7
+
+**What is the score distribution across different anime sources?**
+
+For anime producers who want to understand which anime source has the highest score and the score’s distribution, they can use score_source_byrating( ) to see a side-by-side boxplot of scores across different types of anime. 
+
+```{r, warning=FALSE, message=FALSE}
+score_source_byrating("G")
+```
+
+
