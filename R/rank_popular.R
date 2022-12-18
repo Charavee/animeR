@@ -3,11 +3,11 @@ globalVariables(c("anime", "popularity", "genres", "title", "ranked", "rating", 
 
 #' animeR
 #'
-#' @description This function generates a number (user-specified) of top anime ranked by popularity.
+#' @description This function generates a number (user-specified) of the top animes ranked by popularity.
 #'
-#' @param user_num : A numeric vector of the number of anime that user wants as an output.
+#' @param user_num : A numeric vector of the number of anime the user seeks.
 #'
-#' @return A tibble of the specified number of anime and its synopsis, and other information?
+#' @return A tibble of the specified number of anime and its genre, source, rank and rating.
 #'
 #' @examples
 #'
