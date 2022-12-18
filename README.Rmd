@@ -33,13 +33,13 @@ Our target audience would be people interested in anime or newly exploring anime
 
 You can install the development version of animeR like so:
 
-```{r}
+```r
 devtools::install_github("cbasnetchettri/animeR")
 library(animeR)
 ```
 
 ## List of Functions
-We will be creating the followng functions for this project. Two functions are mainly targeting anime lovers, one helping them to search information about specific anime and another one helping them to get anime recommendation according to their preference. The rest of the functions help anime producers to understand the the general info of the anime industry, under stand the current trend reflected by the synopsis, and use a model to predict the popularity of a specific anime. 
+animeR package includes seven different functions that help anyone who is interested in anime and those who is working in anime, TV, and cultural industry. Below is the list of seven functions with brief explanations of each function. 
 
 1) `search_anime(title)`: This function serves as a tool to obtain an overview of  filtering tool for anime lovers to locate the list of anime of their interest. 
 
@@ -55,19 +55,25 @@ We will be creating the followng functions for this project. Two functions are m
 
 7) `score_source_byrating(rating)`: This function returns a side-by-side boxplot comparing the scores (out of 10) of different sources given the rating specified by the user. 
 
-## Examples
+## Examples 
 
 ```{r example}
 library(animeR)
+```
 
+```{r example1, results='hide'}
 # Search all the anime that has "Naruto" in their title. Please make sure to have a character as an input.
 search_anime("Naruto")
 ```
 
-```{r example2}
+# <img src="data-raw/Images/example-search-anime.png">
+
+```{r example2, results='hide', message=FALSE}
 # Search the top 5 Action anime based on manga and obtain their synopsis
 anime_rec("Action", "Manga", 5)
 ```
+
+# <img src="data-raw/Images/example-anime-rec.png">
 
 ```{r example3}
 #Obtain the top 10 most popular anime and quick information like source, genre, rank etc.
@@ -79,7 +85,10 @@ rank_popular(10)
 score_source_byrating("G")
 ```
 
-## Group Members 
+For further examples and capabilities, please see the [vignette](https://github.com/cbasnetchettri/animeR/blob/main/vignettes/animeR.Rmd).
+
+
+## Contributors 
 
 - Charavee Basnet Chettri 
 - Michiru Nozawa
