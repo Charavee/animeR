@@ -7,13 +7,13 @@
 rank_popular(user_num)
 }
 \arguments{
-\item{user_num}{: A numeric vector of the number of anime that user wants as an output.}
+\item{user_num}{: A numeric vector of the number of anime the user seeks.}
 }
 \value{
-A tibble of the specified number of anime and its synopsis, and other information?
+A tibble of the specified number of anime and its genre, source, rank and rating.
 }
 \description{
-This function generates a number (user-specified) of top anime ranked by popularity.
+This function generates a number (user-specified) of the top animes ranked by popularity.
 }
 \examples{
 
