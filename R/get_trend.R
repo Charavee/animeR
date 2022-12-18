@@ -24,7 +24,7 @@ get_trend<-function(input_type){
   if (!is.character (input_type)){
     stop (paste0 ("input should be a character"), call. = FALSE)}
   else if(!(input_type %in% anime$type)) {
-    stop(paste0("Anime type, ", `input_type`, " ,not found in data"), call. = FALSE)}
+    stop(paste0("Anime type, ", `input_type`, " , not found in data"), call. = FALSE)}
   else{
     anime_type<-anime %>%
       filter(type==input_type)

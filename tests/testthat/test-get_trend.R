@@ -5,5 +5,5 @@ test_that("input is a character vector", {
 })
 
 test_that("input exists in dataset", {
-  expect_error(get_trend("Comedy"), "Rating, Comedy , not found in data")
+  expect_error(get_trend("Comedy"), "Anime type, Comedy , not found in data")
 })
