@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# animeR
+# animeR <img src="data-raw/Sticker/hex-animeR.png" align="right" height=140/>
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
@@ -33,23 +33,10 @@ Our target audience would be people interested in anime or newly exploring anime
 
 You can install the development version of animeR like so:
 
-``` r
+```{r}
 devtools::install_github("cbasnetchettri/animeR")
 library(animeR)
 ```
-
-## Example
-
-This is a basic example for `search_anime()`:
-
-```{r example}
-library(animeR)
-
-# Search all the anime that has "Naruto" in their title. Please make sure to have a character as an input.
-search_anime("Naruto")
-
-```
-
 
 ## List of Functions
 We will be creating the followng functions for this project. Two functions are mainly targeting anime lovers, one helping them to search information about specific anime and another one helping them to get anime recommendation according to their preference. The rest of the functions help anime producers to understand the the general info of the anime industry, under stand the current trend reflected by the synopsis, and use a model to predict the popularity of a specific anime. 
@@ -67,6 +54,30 @@ We will be creating the followng functions for this project. Two functions are m
 6) `get_theme(input_type)`: This function is used to generate a word cloud that shows the most popular words of in all the anime's synopsis. Users can input the type of anime, such as "Movies" and "TV" to narrow down their search.
 
 7) `score_source_byrating(rating)`: This function returns a side-by-side boxplot comparing the scores (out of 10) of different sources given the rating specified by the user. 
+
+## Examples
+
+```{r example}
+library(animeR)
+
+# Search all the anime that has "Naruto" in their title. Please make sure to have a character as an input.
+search_anime("Naruto")
+```
+
+```{r example2}
+# Search the top 5 Action anime based on manga and obtain their synopsis
+anime_rec("Action", "Manga", 5)
+```
+
+```{r example3}
+#Obtain the top 10 most popular anime and quick information like source, genre, rank etc.
+rank_popular(10)
+```
+
+```{r example4}
+#Obtain a side-by-side boxplot
+score_source_byrating("G")
+```
 
 ## Group Members 
 

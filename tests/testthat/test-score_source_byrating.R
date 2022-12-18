@@ -6,7 +6,7 @@ test_that("input is a character vector", {
 })
 
 test_that("input exists in dataset", {
-  expect_error(score_source_byrating("Michiru"), "Rating, Michiru ,not found in data")
+  expect_error(score_source_byrating("Michiru"), regexp= "not found in data")
 })
 
 
