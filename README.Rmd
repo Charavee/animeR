@@ -33,7 +33,7 @@ Our target audience would be people interested in anime or newly exploring anime
 
 You can install the development version of animeR like so:
 
-``` r
+```{r}
 devtools::install_github("cbasnetchettri/animeR")
 library(animeR)
 ```
@@ -62,10 +62,19 @@ library(animeR)
 
 # Search all the anime that has "Naruto" in their title. Please make sure to have a character as an input.
 search_anime("Naruto")
+```
 
+```{r example2}
+# Search the top 5 Action anime based on manga and obtain their synopsis
+anime_rec("Action", "Manga", 5)
+```
+
+```{r example3}
 #Obtain the top 10 most popular anime and quick information like source, genre, rank etc.
 rank_popular(10)
+```
 
+```{r example4}
 #Obtain a side-by-side boxplot
 score_source_byrating("G")
 ```
