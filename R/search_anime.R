@@ -22,20 +22,14 @@ globalVariables(c("title", "anime", "synopsis"))
 #' @export
 
 search_anime <- function(user_title) {
-  if (is.character(user_title)) {
+  if (is.character(user_title) == TRUE & user_title %in% anime$title) {
     title_syn <- tryCatch(
       expr = {
         user_animedf <- anime %>%
           dplyr::filter(str_detect(anime$title, user_title)) %>%
           dplyr::select(title, synopsis)
-
-        # return error message since user's input did not match with any of titles in the dataset
-          if(nrow(user_animedf) == 0) {
-            message("ERROR: Title, ", user_title, ", does not seem to exist in the dataset.")
-          } else{
-            # return a list of anime in Viewer
-            flextable::flextable(user_animedf, cwidth = c(0.5,7,0.5))
-          }
+        # return a list of anime in Viewer
+        flextable::flextable(user_animedf, cwidth = c(0.5, 7, 0.5))
       },
 
       warning = function(cond) {
@@ -51,11 +45,14 @@ search_anime <- function(user_title) {
       }
     )
     return(print(title_syn, n = nrow(title_syn)))
-  } else{
+  } else if (is.character(user_title) == FALSE){
     # stop if user's input is not character
-    stop("user_title should be a character", call. = FALSE)
+    stop("user_title should be a character.", call. = FALSE)
+  } else if (!(user_title %in% anime$title)){
+    stop("The inpputed user_title not found in dataset.", call. = FALSE)
+  } else{
+    stop("Please check your input again.")
   }
-
 }
 
 
