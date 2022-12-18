@@ -10,8 +10,8 @@ globalVariables(c("synopsis", "word", "type", "stop_words"))
 #'
 #' library(animeR)
 #'
-#' # Obtain a word cloud that shows the most frequent words appeared in all anime's synopsis.
-#' get_theme()
+#' # # Obtain visualizations about current themes in anime movies
+#' get_theme("Movie")
 #'
 #' @import dplyr
 #' @import wordcloud

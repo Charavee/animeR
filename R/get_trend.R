@@ -10,8 +10,8 @@ globalVariables(c("synopsis", "word", "stop_words", "duration_minutes", "type", 
 #'
 #' library(animeR)
 #'
-#' # Obtain a word cloud that shows the most frequent words appeared in all anime's synopsis.
-#' get_trend()
+#' # Obtain visualizations about current trends in anime movies
+#' get_trend("Movie")
 #'
 #' @import dplyr
 #' @import RColorBrewer
