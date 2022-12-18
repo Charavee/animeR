@@ -3,7 +3,7 @@ globalVariables(c("synopsis", "word", "stop_words", "duration_minutes", "type", 
 #' Generate three visualizations regarding duration, score across producers, and score across different genre
 #'
 #' @description This function is used to generate visualizations to show the trend of anime duration and score distributions.
-#'
+#' @param input_type : a character vector of the type of the anime. Users can pick one genre out of the list of 6 types we provide.
 #' @return Three visualizations about anime duration, score across different genre and score across different producers.
 #'
 #' @examples

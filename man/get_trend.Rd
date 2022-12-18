@@ -6,6 +6,9 @@
 \usage{
 get_trend(input_type)
 }
+\arguments{
+\item{input_type}{: a character vector of the type of the anime. Users can pick one genre out of the list of 6 types we provide.}
+}
 \value{
 Three visualizations about anime duration, score across different genre and score across different producers.
 }

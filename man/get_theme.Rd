@@ -6,6 +6,9 @@
 \usage{
 get_theme(input_type)
 }
+\arguments{
+\item{input_type}{: a character vector of the type of the anime. Users can pick one genre out of the list of 6 types we provide.}
+}
 \value{
 A word cloud visualization that present the frequency of each the
 }

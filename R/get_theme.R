@@ -3,7 +3,7 @@ globalVariables(c("synopsis", "word", "type", "stop_words", "input_type"))
 #' Generate a Word Cloud of the Most Common Themes in the Synopsis
 #'
 #' @description This function is used to generate a word cloud that shows the most popular words of in all the anime's synopsis.
-#'
+#' @param input_type : a character vector of the type of the anime. Users can pick one genre out of the list of 6 types we provide.
 #' @return A word cloud visualization that present the frequency of each the
 #'
 #' @examples
