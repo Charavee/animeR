@@ -22,7 +22,7 @@ The `animeR` is a package that contains the detailed information of more than 20
 
 ## Motivation
 
-The goal of `animeR` is to help anime directors and anime lovers to easily understand the current trend in the anime industry. The package builds on the dataset. 
+The goal of `animeR` is to help anime directors and anime lovers to easily understand the current  in the anime industry. The package builds on the dataset. 
 
 ## Dataset
 
@@ -30,7 +30,7 @@ The dataset `anime` is taken from [Kaggle](https://www.kaggle.com/datasets/harit
 
 ## Who should use this package?
 
-This package would be perfect for not only people who are already interested in anime but also those who are newly exploring anime and are looking for detailed anime information and/or recommendations. Moreover, creative professionals, such as directors and people who works in anime or media industry, can use this package to understand the trends in their industry. 
+This package would be perfect for not only people who are already interested in anime but also those who are newly exploring anime and are looking for detailed anime information and/or recommendations. Moreover, creative professionals, such as directors and people who works in anime or media industry, can use this package to understand the s in their industry. 
 
 ## What does the data look like?
 
@@ -52,7 +52,7 @@ These are the some example questions that we can address:
 
 4. How are animes scored based on the source they are made from and their rating?
 
-5. What are some current trends in the anime industry ?
+5. What are some current s in the anime industry ?
 
 6. What are the most common themes in an anime synopsis?
 
@@ -115,11 +115,11 @@ score_source_byrating ("PG-13")
 
 ### Example 5
 
-**What is the current trend in the anime industry ?**
+**What is the current  in the anime industry ?**
 
-For directors who are interested in the current trend in the anime industry, they might be interested in learning about how long most anime are, what are the top producers and the score distribution of their animes, and what genre tends to get a higher score. These users can use the `get_trend(inpute_theme)` function to present the distribution of anime duration, anime score across different producers, and average anime score across all genres. 
+For directors who are interested in the current  in the anime industry, they might be interested in learning about how long most anime are, what are the top producers and the score distribution of their animes, and what genre tends to get a higher score. These users can use the `get_(inpute_theme)` function to present the distribution of anime duration, anime score across different producers, and average anime score across all genres. 
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, fig.width=7.5, fig.height=4}
 get_trend("Movie")
 ```
 
@@ -127,20 +127,11 @@ get_trend("Movie")
 
 **What are the most common themes in anime synopsis?**
 
-For directors and screenwriters who are interested in learning about the most common themes in the synopsis, we provide a word cloud visualization that makes it easier for users to see what are the most prevalent ideas in an anime's plot. They can use the `get_trend(input_theme)` to see all common themes in a visualization.
+For directors and screenwriters who are interested in learning about the most common themes in the synopsis, we provide a word cloud visualization that makes it easier for users to see what are the most prevalent ideas in an anime's plot. They can use the `get_(input_theme)` to see all common themes in a visualization.
 
 ```{r, warning=FALSE, message=FALSE}
 get_theme("Movie")
 ```
 
-### Example 7
-
-**What is the score distribution across different anime sources?**
-
-For anime producers who want to understand which anime source has the highest score and the score’s distribution, they can use score_source_byrating( ) to see a side-by-side boxplot of scores across different types of anime. 
-
-```{r, warning=FALSE, message=FALSE}
-score_source_byrating("G")
-```
 
 
