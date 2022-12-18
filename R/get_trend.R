@@ -1,10 +1,10 @@
 globalVariables(c("synopsis", "word", "stop_words", "duration_minutes", "mean_score", "reorder", "plot1", "plot2", "plot3"))
 
-#' Generate a Word Cloud
+#' Generate three visualizations regarding duration, score across producers, and score across different genre
 #'
-#' @description This function is used to generate a word cloud that shows the most popular words of in all the anime's synopsis.
+#' @description This function is used to generate visualizations to show the trend of anime duration and score distributions.
 #'
-#' @return A word cloud visualization that present the frequency of each the
+#' @return Three visualizations about anime duration, score across different genre and score across different producers.
 #'
 #' @examples
 #'
@@ -14,8 +14,6 @@ globalVariables(c("synopsis", "word", "stop_words", "duration_minutes", "mean_sc
 #' get_trend()
 #'
 #' @import dplyr
-#' @import wordcloud
-#' @import tidytext
 #' @import RColorBrewer
 #' @importFrom gridExtra "grid.arrange"
 #' @importFrom magrittr "%>%"
@@ -30,7 +28,6 @@ get_trend<-function(input_type){
   else{
     anime_type<-anime %>%
       filter(type==input_type)
-  }
 
   #visualizing duration of minute
   plot1<-ggplot(data = anime_type, mapping = aes(x= duration_minutes))+
@@ -71,4 +68,5 @@ get_trend<-function(input_type){
     theme(plot.title=element_text(size=8))
 
   grid.arrange(plot1, plot2, plot3, ncol=3)
+  }
 }
